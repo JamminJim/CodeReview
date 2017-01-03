@@ -1,0 +1,9 @@
+﻿// How to Throw an Exception
+	//throw new System.ArgumentOutOfRangeException(Convert.ToString(n));
+
+	// Calculate the sum of a predicted size 
+	// using math formula:  n * (n + 1) / 2   with arrays starting from 1, we can calculate sum of predicted size
+
+	// LINQ Dictionary
+	//var values = dictionary.Where(x => someKeys.Contains(x.Key)).Select(x => x.Value);
+	//var keys = dictionary.Where(x => someValues.Contains(x.Value)).Select(x => x.Key);

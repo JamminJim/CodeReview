@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{0A22233A-C99E-4304-A5B4-4F3FA091B00F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>CodeReview</RootNamespace>
+    <AssemblyName>CodeReview</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Microsoft.Dynamic">
+      <HintPath>..\packages\DynamicLanguageRuntime.1.1.2\lib\Net45\Microsoft.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting.AspNet">
+      <HintPath>..\packages\DynamicLanguageRuntime.1.1.2\lib\Net45\Microsoft.Scripting.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting">
+      <HintPath>..\packages\DynamicLanguageRuntime.1.1.2\lib\Net45\Microsoft.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting.Metadata">
+      <HintPath>..\packages\DynamicLanguageRuntime.1.1.2\lib\Net45\Microsoft.Scripting.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython">
+      <HintPath>..\packages\IronPython.2.7.7\lib\Net45\IronPython.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython.Modules">
+      <HintPath>..\packages\IronPython.2.7.7\lib\Net45\IronPython.Modules.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython.SQLite">
+      <HintPath>..\packages\IronPython.2.7.7\lib\Net45\IronPython.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython.Wpf">
+      <HintPath>..\packages\IronPython.2.7.7\lib\Net45\IronPython.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Subjects\Codility\TimeComplexity\TapeEquilibrium.cs" />
+    <Compile Include="Subjects\Codility\TimeComplexity\MinJumps.cs" />
+    <Compile Include="Subjects\Codility\TimeComplexity\PermMissingElement.cs" />
+    <Compile Include="Subjects\TutsPlus\GettingStarted.cs" />
+    <Compile Include="Subjects\TutsPlus\ImplicitTyping.cs" />
+    <Compile Include="Subjects\TutsPlus\Generics.cs" />
+    <Compile Include="Subjects\TutsPlus\Attributes.cs" />
+    <Compile Include="Subjects\TutsPlus\Reflection.cs" />
+    <Compile Include="Subjects\TutsPlus\Delegates.cs" />
+    <Compile Include="Subjects\TutsPlus\AnonymousMethods.cs" />
+    <Compile Include="Subjects\TutsPlus\LambdaExpressions.cs" />
+    <Compile Include="Subjects\TutsPlus\Events.cs" />
+    <Compile Include="Subjects\TutsPlus\ExtensionMethods.cs" />
+    <Compile Include="Subjects\TutsPlus\LINQ.cs" />
+    <Compile Include="Subjects\TutsPlus\AnonymousTypes.cs" />
+    <Compile Include="Subjects\TutsPlus\DynamicKeywordAndLateBinding.cs" />
+    <Compile Include="Subjects\TutsPlus\OptionalParameters.cs" />
+    <Compile Include="Subjects\TutsPlus\TaskParallel.cs" />
+    <Compile Include="Subjects\TutsPlus\AsyncAwait.cs" />
+    <Compile Include="Subjects\Codility\CyclicRotation.cs" />
+    <Compile Include="Subjects\Codility\EarliestJump.cs" />
+    <Compile Include="Subjects\Codility\MinPosInteger.cs" />
+    <Compile Include="Subjects\Codility\OddOccurrencesInArray.cs" />
+    <Compile Include="Subjects\Codility\IsPermutation.cs" />
+    <Compile Include="Subjects\Codility\BinaryGap.cs" />
+    <Compile Include="Subjects\Codility\CountPassingCars.cs" />
+    <Compile Include="Subjects\Codility\MaxCounters.cs" />
+    <Compile Include="Subjects\Codility\Tests\Test1.cs" />
+    <Compile Include="Subjects\Codility\Tests\Test2.cs" />
+    <Compile Include="Subjects\Codility\Tests\Test3.cs" />
+    <Compile Include="Subjects\Patterns\Patterns.cs" />
+    <Compile Include="Subjects\LinkedLists\LinkedListNode.cs" />
+    <Compile Include="Subjects\LinkedLists\CreateLinkedList.cs" />
+    <Compile Include="Subjects\LinkedLists\PrintLinkedList.cs" />
+    <Compile Include="Subjects\LinkedLists\FindLoopInLinkedList.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Subjects\LinkedLists\SubjectMenu_LinkedLists.cs" />
+    <Compile Include="Subjects\LinkedLists\InsertNodeIntoLinkedList.cs" />
+    <Compile Include="Subjects\CodeTests\SampleCodeTest.cs" />
+    <Compile Include="Subjects\CodeTests\Question1.cs" />
+    <Compile Include="Subjects\CodeTests\Question2.cs" />
+    <Compile Include="Subjects\CodeTests\Question3.cs" />
+    <Compile Include="Subjects\CodeTests\SubjectMenu_CodeTests.cs" />
+    <Compile Include="Subjects\LinkedLists\RemoveNodeFromLinkedList.cs" />
+    <Compile Include="Subjects\LinkedLists\ReverseLinkedList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Subjects\" />
+    <Folder Include="Subjects\Codility\" />
+    <Folder Include="Subjects\Codility\TimeComplexity\" />
+    <Folder Include="Subjects\TutsPlus\" />
+    <Folder Include="Subjects\Codility\Tests\" />
+    <Folder Include="Subjects\Patterns\" />
+    <Folder Include="Subjects\LinkedLists\" />
+    <Folder Include="Subjects\CodeTests\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Subjects\Codility\Tests\codility_ss_test_practice.png" />
+    <None Include="Subjects\Codility\Tests\codility_ss_test1.png" />
+    <None Include="Subjects\Codility\Tests\codility_ss_test2.png" />
+    <None Include="Subjects\Codility\Tests\codility_ss_test3.png" />
+    <None Include="ProgrammingNotes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Subjects\TutsPlus\Test.py">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
