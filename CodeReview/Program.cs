@@ -1,6 +1,7 @@
 using System;
 using CodeReview.Subjects.LinkedLists;
 using CodeReview.Subjects.CodeTests;
+using CodeReview.Subjects.RandomIdeas;
 
 namespace CodeReview
 {
@@ -21,17 +22,20 @@ namespace CodeReview
 			Trees,
 			Strings,
 			Sorting,
-			Questions
+			Questions,
+			Random
 		};
 
-		private static string[] reviewSubjectNames = { "ArrayLists", "LinkedLists", "Trees", "Strings", "Sorting", "Questions" };
+		private static string[] reviewSubjectNames = { "ArrayLists", "LinkedLists", "Trees", "Strings", "Sorting", "Questions", "Random" };
 
 		private static int[] reviewSubjectIds = {   (int)reviewSubjects.ArrayLists,
 													(int)reviewSubjects.LinkedLists,
 													(int)reviewSubjects.Trees,
 													(int)reviewSubjects.Strings,
 													(int)reviewSubjects.Sorting,
-													(int)reviewSubjects.Questions};
+													(int)reviewSubjects.Questions,
+													(int)reviewSubjects.Random
+		};
 		#endregion
 
 		/// <summary>
@@ -110,6 +114,9 @@ namespace CodeReview
 					break;
 				case (int)reviewSubjects.Questions:
 					SubjectMenu_CodeTests.ShowMenu();
+					break;
+				case (int)reviewSubjects.Random:
+					SubjectMenu_RandomIdeas.ShowMenu();
 					break;
 				default:
 					PrintMainMenu();

@@ -103,6 +103,9 @@
     <Compile Include="Subjects\CodeTests\SubjectMenu_CodeTests.cs" />
     <Compile Include="Subjects\LinkedLists\RemoveNodeFromLinkedList.cs" />
     <Compile Include="Subjects\LinkedLists\ReverseLinkedList.cs" />
+    <Compile Include="Subjects\RandomIdeas\AddSomething.cs" />
+    <Compile Include="Subjects\RandomIdeas\SubjectMenu_RandomIdeas.cs" />
+    <Compile Include="Subjects\RandomIdeas\ParseEquation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Subjects\" />
@@ -113,6 +116,7 @@
     <Folder Include="Subjects\Patterns\" />
     <Folder Include="Subjects\LinkedLists\" />
     <Folder Include="Subjects\CodeTests\" />
+    <Folder Include="Subjects\RandomIdeas\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
