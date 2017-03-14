@@ -11,56 +11,76 @@ namespace CodeReview
 		public static void Run() {
 			Console.WriteLine("Running Parse Equation");
 
-			var input = "45+16*3-2*6+1";
+			var input = "1+3*6-4*10*2*3-3*2";
 			Eval(input);
 			var output = solution(input);
 			Console.WriteLine("Output {0}", output);
 		}
 
-		private static void Eval(string s)
-		{
+		private static void Eval(string s) {
 			Stack<int> operands = new Stack<int>();
 			Stack<char> operators = new Stack<char>();
-			var startIndex = 0;
-			var length = 0;
 
-
-			//var operand1 = Int32.Parse(s.Substring(startIndex, length));
-			//var operator1 = char.Parse(s[pos]);
-
-			var i = 0;
-			var op1 = 0;
-			var op2 = 0;
-			char op;
-
+			// parse the string and save operands and operators into stacks
 			var pos = 0;
-			for (i = 0; i < s.Length; i++)
-			{
-				if (s[i] == PLUS || s[i] == MINUS || s[i] == MULTIPLY)
-				{
-					// parse the operator
-					op = s[i];
-					Console.WriteLine("Found Operator: {0} ", op);
-					// parse the (left side) operand
-					op2 = Int32.Parse(s.Substring(pos, i-pos));
-					Console.WriteLine("Found value {0}", op2);
+			char _operator;
+			int _operand;
+			for (int i = 0; i < s.Length; i++) {
+				if (s[i] == PLUS || s[i] == MINUS || s[i] == MULTIPLY) {
 
-					pos = i+1;
-				}
-				else if (s[i] == MULTIPLY)
-				{
-					//
-				}
-				else
-				{
-					//
+					// parse the (left side) operand
+					_operand = Int32.Parse(s.Substring(pos, i - pos));
+					operands.Push(_operand);
+					Console.WriteLine("Found value {0}", _operand);
+
+					// parse the operator
+					_operator = s[i];
+					operators.Push(_operator);
+					Console.WriteLine("Found Operator: {0} ", _operator);
+
+					pos = i + 1;
+				} else if (i == s.Length - 1) {
+
+					// final value
+					_operand = Int32.Parse(s.Substring(pos, s.Length - pos));
+					operands.Push(_operand);
+					Console.WriteLine("Found value {0}", _operand);
 				}
 			}
+
+			// pop operator stack and evaluate
+			int val;
+			while (operators.Count > 0) {
+
+				_operator = operators.Pop();
+				val = operands.Pop();   // hold left side value
+
+				// order of operations, if we parse a +/- 
+				if (_operator != MULTIPLY) {
+
+					// parse all multiplication
+					while (operators.Count > 0 && operators.Peek() == MULTIPLY) {
+						operators.Pop();
+						operands.Push(operands.Pop() * operands.Pop());
+					}
+
+					if (_operator == MINUS) {
+						val = operands.Pop() - val;
+						operands.Push(val);
+					} else if (_operator == PLUS) {
+						val = operands.Pop() + val;
+						operands.Push(val);
+					}
+
+				} else if (_operator == MULTIPLY) {
+					val = val * operands.Pop();
+					operands.Push(val);
+				}
+			}
+
+			int finalValue = operands.Pop();
+			Console.WriteLine("Final Value is {0}", finalValue);
 		}
-
-
-	
-
 
 		/// <summary>
 		/// Takes a string and parses the equation
@@ -68,26 +88,6 @@ namespace CodeReview
 		/// <returns>The solution.</returns>
 		/// <param name="input">Input.</param>
 		private static int solution(string input) {
-
-
-
-			// parse until operator is found
-			// save number
-			// if operator is +, push number and operator
-			// if operator is *,/  perform operator, and continue
-
-			// 4 5 +   =   45 push + push, restart
-			// 1 6 * , scan 3 -
-
-			// 45 16 3 2 6 1
-			//   +   * - * +
-
-
-
-
-
-
-
 
 
 			return 0;
