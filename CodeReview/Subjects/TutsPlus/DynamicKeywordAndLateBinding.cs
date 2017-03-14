@@ -1,5 +1,5 @@
 ﻿using System;
-using IronPython.Hosting;
+//using IronPython.Hosting;
 using System.Dynamic;
 
 namespace CodeReview.Subjects.TutsPlus
@@ -27,13 +27,13 @@ namespace CodeReview.Subjects.TutsPlus
 		private static void Example2() {
 
 			// creates a python runtime environment 
-			var pythonRuntime = Python.CreateRuntime();
+			//var pythonRuntime = Python.CreateRuntime();
 
 			// load file 
-			dynamic pythonFile = pythonRuntime.UseFile("Subjects/TutsPlus/Test.py");
+			//dynamic pythonFile = pythonRuntime.UseFile("Subjects/TutsPlus/Test.py");
 
 			// using dynamic we can call methods within python
-			pythonFile.SayHelloToPython();
+			//pythonFile.SayHelloToPython();
 		}
 
 
